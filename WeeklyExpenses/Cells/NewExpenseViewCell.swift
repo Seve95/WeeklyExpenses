@@ -7,15 +7,37 @@
 //
 
 import UIKit
+import MBLibrary
 
 class NewExpenseViewCell: UITableViewCell {
 
     @IBOutlet weak var expenseText: UITextField!
     @IBOutlet weak var descText: UITextField!
+    var currentWeekTable : CurrentWeekViewController!
     
-    //Need reference to tableViewController to add new expenseCell and refresh
+    
+    
+    @IBOutlet weak var addButton: UIButton!
     
     @IBAction func addNewExpense(_ sender: Any) {
         
+        guard let desc = descText.text, !desc.isEmpty else {
+            let alert = UIAlertController(simpleAlert: "Errore!", message: "Descrizione non inserita")
+            currentWeekTable.present(alert, animated: true)
+            return
+        }
+        
+        guard let exp = expenseText.text, !exp.isEmpty, let exD =  exp.toDouble() else {
+            let alert = UIAlertController(simpleAlert: "Errore!", message: "Spesa non inserita")
+            currentWeekTable.present(alert, animated: true)
+            return
+        }
+        
+        let ex = Expense(desc, exD)
+        currentWeekTable.currentWeek.addExpense(expense: ex)
+        currentWeekTable.tableView.reloadData()
+        
     }
+    
+    
 }

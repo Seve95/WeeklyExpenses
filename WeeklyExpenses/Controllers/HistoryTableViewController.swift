@@ -7,45 +7,52 @@
 //
 
 import UIKit
+import MBLibrary
 
 class HistoryTableViewController: UITableViewController {
 
+    
+    var history : [WeeklyExpense]!
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        history = WeeklyExpense.all.reversed()
+        let indexLast = history.index(of: getLastWeeklyExpense(history))
+        history.remove(at: indexLast!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return history.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell", for: indexPath)
+
+        cell.textLabel?.text = history[indexPath.row].dateString
+        cell.detailTextLabel?.text = "\(history[indexPath.row].getTotal().toString()) €"
 
         return cell
     }
-    */
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailsSegue" {
+            let detailsController = segue.destination as! DetailsTableViewController
+            detailsController.weeklyDetails = history[(self.tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

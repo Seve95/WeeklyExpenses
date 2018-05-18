@@ -7,21 +7,96 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3831CE2EA655CA1723DF37B1 /* Pods_WeeklyExpenses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053DD50D2FF1D30956AE9125 /* Pods_WeeklyExpenses.framework */; };
+		B3281D681FBDB6570010FFFE /* MBLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3281D601FBDB6290010FFFE /* MBLibrary.framework */; };
+		B3281D691FBDB6570010FFFE /* MBLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3281D601FBDB6290010FFFE /* MBLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B37018A41FBA3C3500754B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37018A31FBA3C3500754B63 /* AppDelegate.swift */; };
-		B37018A61FBA3C3500754B63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37018A51FBA3C3500754B63 /* ViewController.swift */; };
 		B37018A91FBA3C3500754B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37018A71FBA3C3500754B63 /* Main.storyboard */; };
 		B37018AB1FBA3C3500754B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37018AA1FBA3C3500754B63 /* Assets.xcassets */; };
 		B37018AE1FBA3C3500754B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37018AC1FBA3C3500754B63 /* LaunchScreen.storyboard */; };
+		B372ABA21FBA45C400E9485A /* CurrentWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABA11FBA45C400E9485A /* CurrentWeekViewController.swift */; };
+		B372ABA41FBA48C700E9485A /* DateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABA31FBA48C700E9485A /* DateViewCell.swift */; };
+		B372ABA61FBA48E700E9485A /* ExpenseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABA51FBA48E700E9485A /* ExpenseViewCell.swift */; };
+		B372ABAA1FBB220500E9485A /* NewExpenseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABA91FBB220500E9485A /* NewExpenseViewCell.swift */; };
+		B372ABAE1FBB381000E9485A /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABAD1FBB381000E9485A /* HistoryTableViewController.swift */; };
+		B372ABB11FBB48CB00E9485A /* WeeklyExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABB01FBB48CB00E9485A /* WeeklyExpense.swift */; };
+		B372ABB31FBB495000E9485A /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABB21FBB495000E9485A /* Expense.swift */; };
+		B3B5571E1FBC375600B1CE2D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B5571D1FBC375600B1CE2D /* Util.swift */; };
+		B3B557221FBCAF4200B1CE2D /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B557211FBCAF4200B1CE2D /* DetailsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B3281D5F1FBDB6290010FFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3281D581FBDB6290010FFFE /* MBLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A584FA51D3E241C000C739B;
+			remoteInfo = "MBLibrary iOS";
+		};
+		B3281D611FBDB6290010FFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3281D581FBDB6290010FFFE /* MBLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A0064CA1D3E9AF00089297D;
+			remoteInfo = "MBLibrary macOS";
+		};
+		B3281D631FBDB6290010FFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3281D581FBDB6290010FFFE /* MBLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A0064FE1D3EB02B0089297D;
+			remoteInfo = "MBLibrary watchOS";
+		};
+		B3281D651FBDB6290010FFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3281D581FBDB6290010FFFE /* MBLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A0064DF1D3E9BFA0089297D;
+			remoteInfo = MBLibraryTests;
+		};
+		B3281D6A1FBDB6570010FFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3281D581FBDB6290010FFFE /* MBLibrary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A584FA41D3E241C000C739B;
+			remoteInfo = "MBLibrary iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3281D6C1FBDB6570010FFFE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B3281D691FBDB6570010FFFE /* MBLibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		053DD50D2FF1D30956AE9125 /* Pods_WeeklyExpenses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyExpenses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3281D581FBDB6290010FFFE /* MBLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBLibrary.xcodeproj; path = ../MBLibrary/MBLibrary.xcodeproj; sourceTree = "<group>"; };
 		B37018A01FBA3C3500754B63 /* WeeklyExpenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeklyExpenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37018A31FBA3C3500754B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B37018A51FBA3C3500754B63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B37018A81FBA3C3500754B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B37018AA1FBA3C3500754B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B37018AD1FBA3C3500754B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B37018AF1FBA3C3500754B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B372ABA11FBA45C400E9485A /* CurrentWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeekViewController.swift; sourceTree = "<group>"; };
+		B372ABA31FBA48C700E9485A /* DateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewCell.swift; sourceTree = "<group>"; };
+		B372ABA51FBA48E700E9485A /* ExpenseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewCell.swift; sourceTree = "<group>"; };
+		B372ABA91FBB220500E9485A /* NewExpenseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseViewCell.swift; sourceTree = "<group>"; };
+		B372ABAD1FBB381000E9485A /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		B372ABB01FBB48CB00E9485A /* WeeklyExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyExpense.swift; sourceTree = "<group>"; };
+		B372ABB21FBB495000E9485A /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		B3B5571D1FBC375600B1CE2D /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		B3B557211FBCAF4200B1CE2D /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		BE4FF30DA3BE80A1095FADCB /* Pods-WeeklyExpenses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyExpenses.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeeklyExpenses/Pods-WeeklyExpenses.release.xcconfig"; sourceTree = "<group>"; };
+		C2511B6A28249EA5535CAD08 /* Pods-WeeklyExpenses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyExpenses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeeklyExpenses/Pods-WeeklyExpenses.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +104,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3831CE2EA655CA1723DF37B1 /* Pods_WeeklyExpenses.framework in Frameworks */,
+				B3281D681FBDB6570010FFFE /* MBLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		569DD0331F5E51E9229BDC84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2511B6A28249EA5535CAD08 /* Pods-WeeklyExpenses.debug.xcconfig */,
+				BE4FF30DA3BE80A1095FADCB /* Pods-WeeklyExpenses.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B3281D591FBDB6290010FFFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3281D601FBDB6290010FFFE /* MBLibrary.framework */,
+				B3281D621FBDB6290010FFFE /* MBLibrary.framework */,
+				B3281D641FBDB6290010FFFE /* MBLibrary.framework */,
+				B3281D661FBDB6290010FFFE /* MBLibraryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B37018971FBA3C3500754B63 = {
 			isa = PBXGroup;
 			children = (
+				B3281D581FBDB6290010FFFE /* MBLibrary.xcodeproj */,
 				B37018A21FBA3C3500754B63 /* WeeklyExpenses */,
 				B37018A11FBA3C3500754B63 /* Products */,
+				569DD0331F5E51E9229BDC84 /* Pods */,
+				D5030F9F454267AE1F3B7DA2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +154,54 @@
 		B37018A21FBA3C3500754B63 /* WeeklyExpenses */ = {
 			isa = PBXGroup;
 			children = (
+				B372ABB51FBB4A1A00E9485A /* Cells */,
+				B372ABB41FBB49CE00E9485A /* Controllers */,
+				B372ABAF1FBB483D00E9485A /* Model */,
 				B37018A31FBA3C3500754B63 /* AppDelegate.swift */,
-				B37018A51FBA3C3500754B63 /* ViewController.swift */,
 				B37018A71FBA3C3500754B63 /* Main.storyboard */,
 				B37018AA1FBA3C3500754B63 /* Assets.xcassets */,
 				B37018AC1FBA3C3500754B63 /* LaunchScreen.storyboard */,
 				B37018AF1FBA3C3500754B63 /* Info.plist */,
+				B3B5571D1FBC375600B1CE2D /* Util.swift */,
 			);
 			path = WeeklyExpenses;
+			sourceTree = "<group>";
+		};
+		B372ABAF1FBB483D00E9485A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B372ABB01FBB48CB00E9485A /* WeeklyExpense.swift */,
+				B372ABB21FBB495000E9485A /* Expense.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B372ABB41FBB49CE00E9485A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B372ABAD1FBB381000E9485A /* HistoryTableViewController.swift */,
+				B372ABA11FBA45C400E9485A /* CurrentWeekViewController.swift */,
+				B3B557211FBCAF4200B1CE2D /* DetailsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B372ABB51FBB4A1A00E9485A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B372ABA31FBA48C700E9485A /* DateViewCell.swift */,
+				B372ABA51FBA48E700E9485A /* ExpenseViewCell.swift */,
+				B372ABA91FBB220500E9485A /* NewExpenseViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D5030F9F454267AE1F3B7DA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				053DD50D2FF1D30956AE9125 /* Pods_WeeklyExpenses.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,13 +211,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B37018B21FBA3C3500754B63 /* Build configuration list for PBXNativeTarget "WeeklyExpenses" */;
 			buildPhases = (
+				7F8DF6CCD30844A65375A19F /* [CP] Check Pods Manifest.lock */,
 				B370189C1FBA3C3500754B63 /* Sources */,
 				B370189D1FBA3C3500754B63 /* Frameworks */,
 				B370189E1FBA3C3500754B63 /* Resources */,
+				8436171203C787107FF04BB7 /* [CP] Embed Pods Frameworks */,
+				B3281D6C1FBDB6570010FFFE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B3281D6B1FBDB6570010FFFE /* PBXTargetDependency */,
 			);
 			name = WeeklyExpenses;
 			productName = WeeklyExpenses;
@@ -91,7 +235,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Nicola Severini";
 				TargetAttributes = {
 					B370189F1FBA3C3500754B63 = {
@@ -111,12 +255,49 @@
 			mainGroup = B37018971FBA3C3500754B63;
 			productRefGroup = B37018A11FBA3C3500754B63 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B3281D591FBDB6290010FFFE /* Products */;
+					ProjectRef = B3281D581FBDB6290010FFFE /* MBLibrary.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B370189F1FBA3C3500754B63 /* WeeklyExpenses */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B3281D601FBDB6290010FFFE /* MBLibrary.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBLibrary.framework;
+			remoteRef = B3281D5F1FBDB6290010FFFE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B3281D621FBDB6290010FFFE /* MBLibrary.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBLibrary.framework;
+			remoteRef = B3281D611FBDB6290010FFFE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B3281D641FBDB6290010FFFE /* MBLibrary.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBLibrary.framework;
+			remoteRef = B3281D631FBDB6290010FFFE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B3281D661FBDB6290010FFFE /* MBLibraryTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MBLibraryTests.xctest;
+			remoteRef = B3281D651FBDB6290010FFFE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B370189E1FBA3C3500754B63 /* Resources */ = {
@@ -131,17 +312,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7F8DF6CCD30844A65375A19F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeeklyExpenses-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8436171203C787107FF04BB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeeklyExpenses/Pods-WeeklyExpenses-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeeklyExpenses/Pods-WeeklyExpenses-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B370189C1FBA3C3500754B63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B37018A61FBA3C3500754B63 /* ViewController.swift in Sources */,
+				B3B5571E1FBC375600B1CE2D /* Util.swift in Sources */,
+				B372ABB31FBB495000E9485A /* Expense.swift in Sources */,
+				B372ABAA1FBB220500E9485A /* NewExpenseViewCell.swift in Sources */,
+				B372ABA21FBA45C400E9485A /* CurrentWeekViewController.swift in Sources */,
+				B3B557221FBCAF4200B1CE2D /* DetailsTableViewController.swift in Sources */,
+				B372ABB11FBB48CB00E9485A /* WeeklyExpense.swift in Sources */,
+				B372ABAE1FBB381000E9485A /* HistoryTableViewController.swift in Sources */,
+				B372ABA41FBA48C700E9485A /* DateViewCell.swift in Sources */,
+				B372ABA61FBA48E700E9485A /* ExpenseViewCell.swift in Sources */,
 				B37018A41FBA3C3500754B63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3281D6B1FBDB6570010FFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MBLibrary iOS";
+			targetProxy = B3281D6A1FBDB6570010FFFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B37018A71FBA3C3500754B63 /* Main.storyboard */ = {
@@ -177,6 +415,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -184,6 +423,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -234,6 +474,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -241,6 +482,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -272,31 +514,39 @@
 		};
 		B37018B31FBA3C3500754B63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2511B6A28249EA5535CAD08 /* Pods-WeeklyExpenses.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J86Z68L44M;
 				INFOPLIST_FILE = WeeklyExpenses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Nicola.WeeklyExpenses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		B37018B41FBA3C3500754B63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE4FF30DA3BE80A1095FADCB /* Pods-WeeklyExpenses.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J86Z68L44M;
 				INFOPLIST_FILE = WeeklyExpenses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Nicola.WeeklyExpenses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
