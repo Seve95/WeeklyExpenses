@@ -10,17 +10,16 @@ import UIKit
 import MBLibrary
 
 class HistoryTableViewController: UITableViewController {
-
     
     var history : [WeeklyExpense]!
-  
+    var historyMonth : [[WeeklyExpense]]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         history = WeeklyExpense.all.reversed()
         let indexLast = history.index(of: getLastWeeklyExpense(history))
         history.remove(at: indexLast!)
+        historyMonth = organizedExpenses(self.history)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,19 +29,25 @@ class HistoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return historyMonth.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = self.historyMonth[section]
+        return section[0].week?.month
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return history.count
+        let section = self.historyMonth[section]
+        return section.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell", for: indexPath)
 
-        cell.textLabel?.text = history[indexPath.row].dateString
-        cell.detailTextLabel?.text = "\(history[indexPath.row].getTotal().toString()) €"
+        cell.textLabel?.text = historyMonth[indexPath.section][indexPath.row].dateString
+        cell.detailTextLabel?.text = "\(((historyMonth[indexPath.section][indexPath.row].getTotal()*100).rounded()/100)) €"
 
         return cell
     }
@@ -50,53 +55,7 @@ class HistoryTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailsSegue" {
             let detailsController = segue.destination as! DetailsTableViewController
-            detailsController.weeklyDetails = history[(self.tableView.indexPathForSelectedRow?.row)!]
+            detailsController.weeklyDetails = historyMonth[(self.tableView.indexPathForSelectedRow?.section)!][(self.tableView.indexPathForSelectedRow?.row)!]
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

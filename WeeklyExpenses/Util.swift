@@ -37,4 +37,52 @@ extension Date {
         return cal.startOfDay(for: self.addingTimeInterval(-dayTime * Double(dayToSub)))
     }
     
+    var month: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        return dateFormatter.string(from: self)
+    }
+    
+}
+
+func numberOfMonths(_ weeklyArray : [WeeklyExpense]) -> Int {
+    if(weeklyArray.count > 0) {
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: weeklyArray[0].week!)
+        var currentMonth = components.month
+        var res = 1
+        for w in weeklyArray {
+            components = calendar.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: w.week!)
+            if(currentMonth != components.month) {
+                currentMonth = components.month
+                res += 1
+            }
+        }
+        return res
+    } else { return 0 }
+}
+
+func organizedExpenses (_ weeklyArray : [WeeklyExpense]) -> [[WeeklyExpense]] {
+    print(weeklyArray.count)
+    print(numberOfMonths(weeklyArray))
+
+    var res = Array(repeating: [WeeklyExpense](), count: numberOfMonths(weeklyArray))
+    
+    let calendar = Calendar.current
+    var components = calendar.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: weeklyArray[0].week!)
+    var currentMonth = components.month
+    var i = 0
+    
+    for w in weeklyArray {
+        components = calendar.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: w.week!)
+        if(currentMonth == components.month) {
+            res[i].append(w)
+        } else {
+            currentMonth = components.month
+            i += 1
+            res[i].append(w)
+        }
+    }
+    
+    return res
 }
