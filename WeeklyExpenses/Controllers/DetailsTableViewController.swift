@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBLibrary
 
 class DetailsTableViewController: UITableViewController {
 

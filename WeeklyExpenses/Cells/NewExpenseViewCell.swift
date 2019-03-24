@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBLibrary
 
 class NewExpenseViewCell: UITableViewCell {
 
@@ -22,13 +21,17 @@ class NewExpenseViewCell: UITableViewCell {
     @IBAction func addNewExpense(_ sender: Any) {
         
         guard let desc = descText.text, !desc.isEmpty else {
-            let alert = UIAlertController(simpleAlert: "Errore!", message: "Descrizione non inserita")
-            currentWeekTable.present(alert, animated: true)
+            let alert = UIAlertController(title: "Errore!", message: "Descrizione non inserita", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")}))
+                currentWeekTable.present(alert, animated: true)
             return
         }
         
-        guard let exp = expenseText.text, !exp.isEmpty, let exD =  exp.toDouble() else {
-            let alert = UIAlertController(simpleAlert: "Errore!", message: "Spesa non inserita")
+        guard let exp = expenseText.text, !exp.isEmpty, let exD = Double(exp) else {
+             let alert = UIAlertController(title: "Errore!", message: "Spesa non inserita", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")}))
             currentWeekTable.present(alert, animated: true)
             return
         }
@@ -39,5 +42,6 @@ class NewExpenseViewCell: UITableViewCell {
         
     }
     
-    
+        
 }
+

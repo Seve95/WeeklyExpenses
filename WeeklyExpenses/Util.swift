@@ -45,6 +45,17 @@ extension Date {
     
 }
 
+extension Double {
+    func toString() -> String {
+        return String(format:"%.2f", self)
+    }
+}
+extension String {
+    func toDouble() -> Double {
+        return Double(self)! 
+    }
+}
+
 func numberOfMonths(_ weeklyArray : [WeeklyExpense]) -> Int {
     if(weeklyArray.count > 0) {
         let calendar = Calendar.current
@@ -63,26 +74,28 @@ func numberOfMonths(_ weeklyArray : [WeeklyExpense]) -> Int {
 }
 
 func organizedExpenses (_ weeklyArray : [WeeklyExpense]) -> [[WeeklyExpense]] {
-    print(weeklyArray.count)
-    print(numberOfMonths(weeklyArray))
+    if (weeklyArray.count > 0) {
+        print(weeklyArray.count)
+        print(numberOfMonths(weeklyArray))
 
-    var res = Array(repeating: [WeeklyExpense](), count: numberOfMonths(weeklyArray))
-    
-    let calendar = Calendar.current
-    var components = calendar.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: weeklyArray[0].week!)
-    var currentMonth = components.month
-    var i = 0
-    
-    for w in weeklyArray {
-        components = calendar.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: w.week!)
-        if(currentMonth == components.month) {
-            res[i].append(w)
-        } else {
-            currentMonth = components.month
-            i += 1
-            res[i].append(w)
+        var res = Array(repeating: [WeeklyExpense](), count: numberOfMonths(weeklyArray))
+        
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: weeklyArray[0].week!)
+        var currentMonth = components.month
+        var i = 0
+        
+        for w in weeklyArray {
+            components = calendar.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: w.week!)
+            if(currentMonth == components.month) {
+                res[i].append(w)
+            } else {
+                currentMonth = components.month
+                i += 1
+                res[i].append(w)
+            }
         }
-    }
-    
-    return res
+        
+        return res
+    } else { return [[]] }
 }
