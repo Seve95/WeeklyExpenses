@@ -43,6 +43,12 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    var year: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY"
+        return dateFormatter.string(from: self)
+    }
+    
 }
 
 extension Double {

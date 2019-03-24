@@ -33,7 +33,8 @@ class HistoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let section = self.historyMonth[section]
-        return section[0].week?.month
+        let res = (section[0].week?.month)! + " " + (section[0].week?.year)!
+        return res
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
