@@ -28,7 +28,7 @@ class NewExpenseViewCell: UITableViewCell {
             return
         }
         
-        guard let exp = expenseText.text, !exp.isEmpty, let exD = Double(exp) else {
+        guard let exp = expenseText.text, !exp.isEmpty, let exD = exp.toDouble() else {
              let alert = UIAlertController(title: "Errore!", message: "Spesa non inserita", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                 NSLog("The \"OK\" alert occured.")}))

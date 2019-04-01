@@ -56,9 +56,13 @@ extension Double {
         return String(format:"%.2f", self)
     }
 }
+
 extension String {
-    func toDouble() -> Double {
-        return Double(self)! 
+    func toDouble() -> Double! {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .decimal
+        return formatter.number(from: self) as? Double
     }
 }
 
