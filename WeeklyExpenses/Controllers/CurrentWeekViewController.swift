@@ -90,7 +90,7 @@ class CurrentWeekViewController: UITableViewController, UITextFieldDelegate {
        return indexPath.section == 1
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if(indexPath.section == 1) {
             if(currentWeek.deleteExpense(expense: currentWeek.expenses[indexPath.row])) {

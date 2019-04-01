@@ -16,7 +16,7 @@ class HistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         history = WeeklyExpense.all.reversed()
-        let indexLast = history.index(of: getLastWeeklyExpense(history))
+        let indexLast = history.firstIndex(of: getLastWeeklyExpense(history))
         history.remove(at: indexLast!)
         historyMonth = organizedExpenses(self.history)
     }
