@@ -7,4 +7,5 @@ target 'WeeklyExpenses' do
   # Pods for WeeklyExpenses
 
     pod 'RealmSwift'
+    pod 'Google-Mobile-Ads-SDK'
 end
