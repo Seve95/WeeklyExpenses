@@ -55,6 +55,13 @@ extension Double {
     func toString() -> String {
         return String(format:"%.2f", self)
     }
+    
+    func toPriceString() -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = NSLocale.current
+        return formatter.string(from: NSNumber(value: self))! 
+    }
 }
 
 extension String {

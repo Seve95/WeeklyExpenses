@@ -13,6 +13,7 @@ class ExpenseViewCell: UITableViewCell {
     var expense : Expense!
     
     
-    @IBOutlet weak var expenseLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var expenseLabel: UILabel!
+    
 }

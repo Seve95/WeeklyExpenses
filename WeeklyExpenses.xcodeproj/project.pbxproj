@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3831CE2EA655CA1723DF37B1 /* Pods_WeeklyExpenses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053DD50D2FF1D30956AE9125 /* Pods_WeeklyExpenses.framework */; };
+		B34D45C7225A697900C3A938 /* GoogleAdViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34D45C6225A697900C3A938 /* GoogleAdViewCell.swift */; };
 		B37018A41FBA3C3500754B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37018A31FBA3C3500754B63 /* AppDelegate.swift */; };
 		B37018A91FBA3C3500754B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37018A71FBA3C3500754B63 /* Main.storyboard */; };
 		B37018AB1FBA3C3500754B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37018AA1FBA3C3500754B63 /* Assets.xcassets */; };
@@ -19,6 +20,8 @@
 		B372ABAE1FBB381000E9485A /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABAD1FBB381000E9485A /* HistoryTableViewController.swift */; };
 		B372ABB11FBB48CB00E9485A /* WeeklyExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABB01FBB48CB00E9485A /* WeeklyExpense.swift */; };
 		B372ABB31FBB495000E9485A /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372ABB21FBB495000E9485A /* Expense.swift */; };
+		B38C7A03225F2E9600B621BD /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38C7A02225F2E9600B621BD /* AddExpenseViewController.swift */; };
+		B38C7A05225F41EB00B621BD /* NewCurrentWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38C7A04225F41EB00B621BD /* NewCurrentWeekViewController.swift */; };
 		B3B5571E1FBC375600B1CE2D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B5571D1FBC375600B1CE2D /* Util.swift */; };
 		B3B557221FBCAF4200B1CE2D /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B557211FBCAF4200B1CE2D /* DetailsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		053DD50D2FF1D30956AE9125 /* Pods_WeeklyExpenses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyExpenses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34D45C6225A697900C3A938 /* GoogleAdViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdViewCell.swift; sourceTree = "<group>"; };
 		B37018A01FBA3C3500754B63 /* WeeklyExpenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeklyExpenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37018A31FBA3C3500754B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B37018A81FBA3C3500754B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		B372ABAD1FBB381000E9485A /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		B372ABB01FBB48CB00E9485A /* WeeklyExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyExpense.swift; sourceTree = "<group>"; };
 		B372ABB21FBB495000E9485A /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		B38C7A02225F2E9600B621BD /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		B38C7A04225F41EB00B621BD /* NewCurrentWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCurrentWeekViewController.swift; sourceTree = "<group>"; };
 		B3B5571D1FBC375600B1CE2D /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		B3B557211FBCAF4200B1CE2D /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		BE4FF30DA3BE80A1095FADCB /* Pods-WeeklyExpenses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyExpenses.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeeklyExpenses/Pods-WeeklyExpenses.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 				B372ABAD1FBB381000E9485A /* HistoryTableViewController.swift */,
 				B372ABA11FBA45C400E9485A /* CurrentWeekViewController.swift */,
 				B3B557211FBCAF4200B1CE2D /* DetailsTableViewController.swift */,
+				B38C7A02225F2E9600B621BD /* AddExpenseViewController.swift */,
+				B38C7A04225F41EB00B621BD /* NewCurrentWeekViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 				B372ABA31FBA48C700E9485A /* DateViewCell.swift */,
 				B372ABA51FBA48E700E9485A /* ExpenseViewCell.swift */,
 				B372ABA91FBB220500E9485A /* NewExpenseViewCell.swift */,
+				B34D45C6225A697900C3A938 /* GoogleAdViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B5571E1FBC375600B1CE2D /* Util.swift in Sources */,
+				B38C7A03225F2E9600B621BD /* AddExpenseViewController.swift in Sources */,
 				B372ABB31FBB495000E9485A /* Expense.swift in Sources */,
 				B372ABAA1FBB220500E9485A /* NewExpenseViewCell.swift in Sources */,
 				B372ABA21FBA45C400E9485A /* CurrentWeekViewController.swift in Sources */,
@@ -278,8 +288,10 @@
 				B372ABB11FBB48CB00E9485A /* WeeklyExpense.swift in Sources */,
 				B372ABAE1FBB381000E9485A /* HistoryTableViewController.swift in Sources */,
 				B372ABA41FBA48C700E9485A /* DateViewCell.swift in Sources */,
+				B34D45C7225A697900C3A938 /* GoogleAdViewCell.swift in Sources */,
 				B372ABA61FBA48E700E9485A /* ExpenseViewCell.swift in Sources */,
 				B37018A41FBA3C3500754B63 /* AppDelegate.swift in Sources */,
+				B38C7A05225F41EB00B621BD /* NewCurrentWeekViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
